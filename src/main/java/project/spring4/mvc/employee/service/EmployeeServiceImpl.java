@@ -34,7 +34,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee readOneEmployee(int empid) {
-        return null;
+        return empdao.selectOneEmployee(empid);
     }
 
     @Override

@@ -54,7 +54,25 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public Employee selectOneEmployee(int empid) {
-        return null;
+        Object[] param = new Object[] { empid };
+
+        RowMapper<Employee> mapper = new EmployeeOneMapper();
+        Employee emp =
+            jdbcTemplate.queryForObject(selectOneSQL, mapper, empid);
+
+        return emp;
+    }
+
+    private class EmployeeOneMapper implements RowMapper<Employee> {
+        @Override
+        public Employee mapRow(ResultSet rs, int num) throws SQLException {
+            Employee emp = new Employee(rs.getInt(1), rs.getString(2),
+                rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),
+                rs.getString(7),rs.getInt(8),rs.getDouble(9),
+                rs.getInt(10),rs.getInt(11) );
+
+            return emp;
+        }
     }
 
     @Override
@@ -66,6 +84,5 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     public int deleteEmployee(int empid) {
         return 0;
     }
-
 
 }

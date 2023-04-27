@@ -25,6 +25,16 @@ public class Employee {
         this.deptid = deptid;
     }
 
+    public Employee(int empid, String fname, String lname, String email, String phone, String hdate, String jobid, int sal, double comm, int mgrid, int deptid) {
+        this(empid, fname, email, jobid, deptid);
+        this.lname = lname;
+        this.phone = phone;
+        this.hdate = hdate;
+        this.sal = sal;
+        this.comm = comm;
+        this.mgrid = mgrid;
+    }
+
     public int getEmpid() {
         return empid;
     }

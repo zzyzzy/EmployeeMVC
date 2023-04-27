@@ -9,7 +9,9 @@
 
 <ul>
     <c:forEach items="${emps}" var="emp">
-    <li>${emp.empid} ${emp.fname} ${emp.email} ${emp.jobid} ${emp.deptid}</li>
+        <li>${emp.empid}
+            <a href="/view?empid=${emp.empid}">${emp.fname}</a>
+            ${emp.email} ${emp.jobid} ${emp.deptid}</li>
     </c:forEach>
 </ul>
 
