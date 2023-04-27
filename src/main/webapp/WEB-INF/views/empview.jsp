@@ -21,7 +21,7 @@
     <li>${emp.deptid}</li>
 </ul>
 
-<p>사원정보 수정</p>
+<p><a href="/modify?empid=${emp.empid}">사원정보 수정</a></p>
 <p><a href="/remove?empid=${emp.empid}">사원정보 삭제</a></p>
 
 </body>
