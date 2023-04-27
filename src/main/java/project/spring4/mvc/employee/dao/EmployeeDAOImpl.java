@@ -82,7 +82,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public int deleteEmployee(int empid) {
-        return 0;
+        Object[] param = new Object[] { empid };
+
+        return jdbcTemplate.update(deleteSQL, param);
     }
 
 }
