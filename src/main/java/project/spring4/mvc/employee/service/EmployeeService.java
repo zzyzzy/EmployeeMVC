@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface EmployeeService {
 
-    int newEmployee(Employee emp);
+    boolean newEmployee(Employee emp);
     List<Employee> readEmployee();
     Employee readOneEmployee(int empid);
-    int modifyEmployee(Employee emp);
-    int removeEmployee(int empid);
+    boolean modifyEmployee(Employee emp);
+    boolean removeEmployee(int empid);
 
 }

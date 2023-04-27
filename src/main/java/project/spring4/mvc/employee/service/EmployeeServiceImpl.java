@@ -18,8 +18,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public int newEmployee(Employee emp) {
-        return 0;
+    public boolean newEmployee(Employee emp) {
+        boolean result = false;
+
+        if (empdao.insertEmployee(emp) > 0) result = true;
+
+        return result;
     }
 
     @Override
@@ -34,12 +38,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public int modifyEmployee(Employee emp) {
-        return 0;
+    public boolean modifyEmployee(Employee emp) {
+        return false;
     }
 
     @Override
-    public int removeEmployee(int empid) {
-        return 0;
+    public boolean removeEmployee(int empid) {
+        return false;
     }
 }
